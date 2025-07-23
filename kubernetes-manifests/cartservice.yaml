@@ -33,7 +33,10 @@ spec:
         - containerPort: 7070
         env:
         - name: REDIS_ADDR
-          value: "redis-cart:6379"
+          valueFrom:
+            configMapKeyRef:
+              name: redis-config           # The ConfigMap this value comes from.
+              key: redis_addr # The key to fetch.
         resources:
           requests:
             cpu: 200m
@@ -65,4 +68,11 @@ spec:
   - name: grpc
     port: 7070
     targetPort: 7070
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: redis-config
+data:
+  redis_addr: "redis-cart:6379"
 ---
