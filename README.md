@@ -1,5 +1,5 @@
 # Demo Application.
-## Demo Application Design
+## Demo Application Architecture
 ![image](https://github.com/user-attachments/assets/c28faf2b-7127-4d2f-98d0-954c095ebe1f)
 
 ## Application information
